@@ -10,9 +10,6 @@ class MerkleTree:
         self.root = self.build_tree(transactions)
 
     def build_tree(self, transactions):
-        if len(transactions) == 0:  
-            return None
-
         if len(transactions) == 1:
             return hash(transactions[0])
 
