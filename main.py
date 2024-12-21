@@ -1,5 +1,5 @@
 import hashlib
-
+import time
 def hash(text):
     hashed = hashlib.sha256(text.encode()).hexdigest()
     return hashed
