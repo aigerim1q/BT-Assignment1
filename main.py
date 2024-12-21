@@ -28,3 +28,7 @@ class Block:
         self.transactions = transactions
         self.merkle_root = MerkleTree(transactions).root
         self.hash = None
+
+        def compute_hash(self):
+        block_string = f"{self.index}{self.previous_hash}{self.timestamp}{self.merkle_root}"
+        return hash(block_string)
