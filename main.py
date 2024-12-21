@@ -32,3 +32,10 @@ class Block:
         def compute_hash(self):
         block_string = f"{self.index}{self.previous_hash}{self.timestamp}{self.merkle_root}"
         return hash(block_string)
+        
+class Blockchain:
+    def init(self):
+        self.chain = []
+        self.pending_transactions = []
+        self.create_genesis_block()
+
