@@ -39,3 +39,11 @@ class Blockchain:
         self.pending_transactions = []
         self.create_genesis_block()
 
+   def create_genesis_block(self):
+        genesis_block = Block(0, "0", ["Genesis Block"])
+        genesis_block.hash = genesis_block.compute_hash()
+        self.chain.append(genesis_block)
+
+    def add_transaction(self, sender, receiver, amount):
+        transaction = f"{sender}->{receiver}:{amount}"
+        self.pending_transactions.append(transaction)
